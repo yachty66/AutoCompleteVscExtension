@@ -13,13 +13,24 @@ export function activate(_: vscode.ExtensionContext) {
         //what is happening here 
         provideInlineCompletionItems: async (document, position, context, token) => {
             //i am getting hello world only short displayed  
-            orange.appendLine("I am a banana.");
-            if (document.getText(new vscode.Range(position.translate(0, -1), position)) === 'H') {
+
+            if (true) {
+                
+                //get content form whole line
+                const line = document.lineAt(position.line);
+                orange.appendLine("test");
+
+                let completionItem = new vscode.CompletionItem(line.text);
+				completionItem.insertText = line.text;
+				completionItem.range = new vscode.Range(position, position);
+				return [completionItem];
+            }
+            /*if (document.getText(new vscode.Range(position.translate(0, -1), position)) === 'H') {
                 let completionItem = new vscode.CompletionItem('ello World');
                 completionItem.insertText = 'ello World';
                 completionItem.range = new vscode.Range(position.translate(0, -1), position);
                 return [completionItem];
-            }
+            }*/
         },
     };
 
