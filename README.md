@@ -6,15 +6,24 @@ Text autocompletion tool for markdown.
 
 ## Why
 
-Text autocompletion in markdown makes not necessary to use google. All kinds of definitins for example the definition for an atom if you need it gets displayed directly in Visual Studio Code.
+Text autocompletion in markdown makes not necessary to use google. All kinds of definitins for example the definition for an atom if you need it gets displayed directly in Visual Studio Code. 
 
 ## Dependencies
 
 - [x] define full scope of application and why I create it. write it under why from gh cheatsheet (check again how exactly the structure was)
-- [ ] Suggest hello world inline. when starting with typing it should appear all the time 
-- [ ] define next steps
-
+- [x] Suggest hello world inline. when starting with typing it should appear all the time 
+- [ ] get text from last enter to cursor position and display in window
+- [ ] display inline the text from above 
+- [ ] create a python file and find a language model which is good in giving scientific answers. test it with the prompt "A atom is"
+- [ ] create a server for the model 
+- [ ] test in seperate js file if i get responses from server. if it takes to long or other bugs occur make correction.
+- [ ] put text from md file inside of request and put respond into inline completion
+- [ ] next steps
+ 
 # Notes
+Neet to get text from enter to cursor. This would be the text which i would use as prompt in my model. Every time the user hits tab new request to server. perhaps i dont even need the tab functionality because vsc is regulating this by itself. next step would be to bind the model to a server. i.e. creating a python file which 
+
+
 Works with activation event. I need a event for every new character in a markdown file. can test that at the beginning with logging something when new character is typed. That the extension is simple I take as input for the model always only the words starting after the last point of an sentence.  
 
 Well I could try to implement the copy to clipboard stuff and then from there I can checkout how this works with my my more complex implementation. 
@@ -40,3 +49,7 @@ I will make the extension not public because otherwise i would need to pay serve
 I need to define the milestones of the project. I come back to the project and have no glue about what it is about
 
 A atom is
+
+
+# Debugging
+running Extension Development Host from CLI = code --extensionDevelopmentPath=/Users/maxhager/Projects2022/TextAutocompletionMarkdown/textautocompletionmarkdown
